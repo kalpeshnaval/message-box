@@ -2,6 +2,8 @@ import NoteClient from "@/components/NoteClient";
 import Note from "@/model/Note";
 import dbConnect from "@/lib/db";
 
+export const revalidate = 0;
+
 async function getNotes() {
   await dbConnect();
   const notes = await Note.find({}).sort({ createdAt: -1 }).lean();
