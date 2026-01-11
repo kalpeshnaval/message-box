@@ -155,7 +155,7 @@ const NoteClient = ({ initialNotes }) => {
                   whileHover={{ y: -3 }}
                 >
                   {" "}
-                  message
+                  message for world
                 </motion.span>
                 <span>
                   {loading ? (
