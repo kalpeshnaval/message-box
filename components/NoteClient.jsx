@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 const NoteClient = ({ initialNotes }) => {
   const [notes, setNotes] = useState(initialNotes);
@@ -102,28 +103,13 @@ const NoteClient = ({ initialNotes }) => {
   return (
     <>
       <div className="min-h-screen p-6 flex items-center justify-center flex-col">
-        <div className="mb-6">
-          <h1 className="text-3xl text-gray-800 font-bold">
-            <motion.span
-              className="inline-block"
-              initial={{ opacity: 0, x: -40 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.8, ease: "easeIn" },
-              }}
-              whileHover={{ y: 2 }}
-            >
-              Message
-            </motion.span>{" "}
-            <motion.span
-              className="text-blue-500 transition-colors inline-block"
-              whileHover={{ y: -2 }}
-            >
-              Box
-            </motion.span>
-          </h1>
-        </div>
+        <motion.div className="mb-6"
+        initial={{opacity: 0, x: -40}}
+        animate={{opacity: 1, x: 0, transition:{duration: 0.8, ease:"easeIn"}}}
+        whileHover={{scale: 1.05, y:-2}}
+        >
+          <Image width={150} height={200} src="/logo.png" alt="message box logo" />
+        </motion.div>
 
         <div className="">
           <motion.div
@@ -156,6 +142,20 @@ const NoteClient = ({ initialNotes }) => {
                 >
                   {" "}
                   message
+                </motion.span>
+                <motion.span
+                  className="inline-block hover:text-pink-500"
+                  whileHover={{ y: 3 }}
+                >
+                  {" "}
+                  to
+                </motion.span>
+                <motion.span
+                  className="inline-block hover:text-purple-500-500"
+                  whileHover={{ y: -3 }}
+                >
+                  {" "}
+                  world
                 </motion.span>
                 <span>
                   {loading ? (
