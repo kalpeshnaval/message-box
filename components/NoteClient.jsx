@@ -141,7 +141,7 @@ const NoteClient = ({ initialNotes }) => {
                   whileHover={{ y: -3 }}
                 >
                   {" "}
-                  message
+                  message to world
                 </motion.span>
                 <motion.span
                   className="inline-block hover:text-pink-500"
